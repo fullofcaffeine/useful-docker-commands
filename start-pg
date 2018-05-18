@@ -1,0 +1,4 @@
+#!/bin/bash
+docker stop $(docker ps -aq --filter name=local-postgres)
+docker rm $(docker ps -aq --filter name=local-postgres)
+docker run --name local-postgres -p 5432:5432 -d -v /home/postgres:/home/fullofcaffeine/workspace/db_dumps --volumes-from postgres-data postgres:10.3    

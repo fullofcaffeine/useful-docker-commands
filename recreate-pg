@@ -1,3 +1,3 @@
 reset-docker
-docker create -v /var/lib/postgresql/data --name postgres9.6.8-data busybox
-docker run --name local-postgres9.6.8 -p 5432:5432 -d --volumes-from postgres9.6.8-data postgres:9.6.8  
+docker create -v /var/lib/postgresql/data --name postgres-data busybox
+docker run --name local-postgres9.6.8 -p 5432:5432 -d --volumes-from postgres-data postgres:10.3  
